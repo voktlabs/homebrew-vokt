@@ -29,11 +29,11 @@ class Vokt < Formula
 
   # Java engine JARs (platform-independent) for Java/JVM analysis
   resource "java-engine" do
-    url "https://github.com/maneeshchaturvedi/homebrew-vokt/releases/download/v2.0.6/vokt-java-engine.jar"
+    url "https://github.com/maneeshchaturvedi/homebrew-vokt/releases/download/v2.0.34/vokt-java-engine.jar"
   end
 
   resource "tai-e" do
-    url "https://github.com/maneeshchaturvedi/homebrew-vokt/releases/download/v2.0.6/tai-e-all.jar"
+    url "https://github.com/maneeshchaturvedi/homebrew-vokt/releases/download/v2.0.34/tai-e-all.jar"
   end
 
   def install
