@@ -4,36 +4,37 @@
 class Vokt < Formula
   desc "Behavioral code analysis — call graphs, risk scores, blast radius"
   homepage "https://github.com/maneeshchaturvedi/homebrew-vokt"
-  version "2.0.34"
+  version "2.0.35"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/maneeshchaturvedi/homebrew-vokt/releases/download/v2.0.34/vokt-darwin-arm64"
-      sha256 "4b572ed470b8f3c09b562ced923484546fea1a252aedde0634491a647cb05b18"
+      url "https://github.com/maneeshchaturvedi/homebrew-vokt/releases/download/v2.0.35/vokt-darwin-arm64"
+      sha256 "6e2a1e98871d9e35bc8196154236922eafbd42c311c4cfe976c293b7e31201c2"
     else
-      url "https://github.com/maneeshchaturvedi/homebrew-vokt/releases/download/v2.0.34/vokt-darwin-amd64"
-      sha256 "a52f0b1dce334756ff2913be9435546233aa9f4874b8990a0ca1800ccf7ead9f"
+      url "https://github.com/maneeshchaturvedi/homebrew-vokt/releases/download/v2.0.35/vokt-darwin-amd64"
+      sha256 "461ecebcde69b50bc2fbc771f52db9c8c18e73ea9df9b7ce3f7e12c9029260be"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/maneeshchaturvedi/homebrew-vokt/releases/download/v2.0.34/vokt-linux-arm64"
-      sha256 "ef9a9a9621b26d0f1e23a938b29fb7ca41f3a33573b11c59dbb11d27356d0485"
+      url "https://github.com/maneeshchaturvedi/homebrew-vokt/releases/download/v2.0.35/vokt-linux-arm64"
+      sha256 "6e21a10ae12958a07c844ef8076bff0dd2130ed024388c2635d4d0b14646acc3"
     else
-      url "https://github.com/maneeshchaturvedi/homebrew-vokt/releases/download/v2.0.34/vokt-linux-amd64"
-      sha256 "479bfdd357ad575d1e1135290f03d5390a6c66db028984ebca287055a0eb1acb"
+      url "https://github.com/maneeshchaturvedi/homebrew-vokt/releases/download/v2.0.35/vokt-linux-amd64"
+      sha256 "52793bb3a04cc4648d1b975a961c69ee30677b52333afc4089d32c68f1ddd693"
     end
   end
 
-  # Java engine JARs (platform-independent) for Java/JVM analysis
+  # Java engine (platform-independent) for Java/JVM analysis
   resource "java-engine" do
-    url "https://github.com/maneeshchaturvedi/homebrew-vokt/releases/download/v2.0.34/vokt-java-engine.jar"
+    url "https://github.com/maneeshchaturvedi/homebrew-vokt/releases/download/v2.0.35/vokt-java-engine.jar"
   end
 
-  resource "tai-e" do
-    url "https://github.com/maneeshchaturvedi/homebrew-vokt/releases/download/v2.0.34/tai-e-all.jar"
+  # Tai-e runtime (LGPL, kept separate) — tarball of JARs
+  resource "tai-e-deps" do
+    url "https://github.com/maneeshchaturvedi/homebrew-vokt/releases/download/v2.0.35/tai-e-deps.tar.gz"
   end
 
   def install
@@ -42,9 +43,14 @@ class Vokt < Formula
     bin.install "vokt-linux-arm64" => "vokt" if Hardware::CPU.arm? && OS.linux?
     bin.install "vokt-linux-amd64" => "vokt" if Hardware::CPU.intel? && OS.linux?
 
-    # Place Java engine JARs next to the binary so vokt finds them automatically
+    # Place Java engine JAR next to the binary
     resource("java-engine").stage { bin.install "vokt-java-engine.jar" }
-    resource("tai-e").stage { bin.install "tai-e-all.jar" }
+
+    # Extract Tai-e runtime JARs into tai-e/ directory next to the binary
+    (bin/"tai-e").mkpath
+    resource("tai-e-deps").stage do
+      (bin/"tai-e").install Dir["*.jar"]
+    end
   end
 
   test do
