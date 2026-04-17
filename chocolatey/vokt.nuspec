@@ -5,16 +5,16 @@
     <version>$VERSION$</version>
     <title>Vokt CLI</title>
     <authors>Maneesh Chaturvedi</authors>
-    <owners>maneeshchaturvedi</owners>
-    <projectUrl>https://github.com/maneeshchaturvedi/homebrew-vokt</projectUrl>
-    <licenseUrl>https://github.com/maneeshchaturvedi/homebrew-vokt/blob/main/LICENSE</licenseUrl>
+    <owners>voktlabs</owners>
+    <projectUrl>https://github.com/voktlabs/homebrew-vokt</projectUrl>
+    <licenseUrl>https://github.com/voktlabs/homebrew-vokt/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Behavioral code analysis for Go and Java codebases. Vokt builds precise call graphs using SSA/VTA analysis, computes risk scores, blast radius, and hub detection to help developers understand the impact of code changes.</description>
     <summary>Behavioral code analysis — call graphs, risk scores, blast radius</summary>
     <tags>vokt cli development code-analysis call-graph risk-score blast-radius</tags>
-    <packageSourceUrl>https://github.com/maneeshchaturvedi/homebrew-vokt</packageSourceUrl>
-    <docsUrl>https://github.com/maneeshchaturvedi/homebrew-vokt</docsUrl>
-    <bugTrackerUrl>https://github.com/maneeshchaturvedi/homebrew-vokt/issues</bugTrackerUrl>
+    <packageSourceUrl>https://github.com/voktlabs/homebrew-vokt</packageSourceUrl>
+    <docsUrl>https://github.com/voktlabs/homebrew-vokt</docsUrl>
+    <bugTrackerUrl>https://github.com/voktlabs/homebrew-vokt/issues</bugTrackerUrl>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

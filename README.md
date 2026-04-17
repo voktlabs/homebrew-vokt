@@ -7,13 +7,13 @@ Official package repository for Vokt — behavioral code analysis for Go and Jav
 ### macOS/Linux (Homebrew)
 
 ```bash
-brew tap maneeshchaturvedi/vokt
+brew tap voktlabs/vokt
 brew install vokt
 ```
 
 ### Windows (Chocolatey)
 
-Download the latest `.nupkg` file from [releases](https://github.com/maneeshchaturvedi/homebrew-vokt/releases) and install:
+Download the latest `.nupkg` file from [releases](https://github.com/voktlabs/homebrew-vokt/releases) and install:
 
 ```powershell
 # Navigate to the directory containing the .nupkg file
@@ -36,8 +36,8 @@ Vokt builds precise call graphs for Go and Java codebases using SSA/VTA and poin
 
 ## Links
 
-- [Releases](https://github.com/maneeshchaturvedi/homebrew-vokt/releases)
-- [Issues](https://github.com/maneeshchaturvedi/homebrew-vokt/issues)
+- [Releases](https://github.com/voktlabs/homebrew-vokt/releases)
+- [Issues](https://github.com/voktlabs/homebrew-vokt/issues)
 
 ## License
 
