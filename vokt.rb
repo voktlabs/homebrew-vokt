@@ -4,26 +4,26 @@
 class Vokt < Formula
   desc "Language-agnostic call graph extraction via tree-sitter and Soufflé"
   homepage "https://github.com/voktlabs/homebrew-vokt"
-  version "2.0.64"
+  version "2.0.65"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/voktlabs/homebrew-vokt/releases/download/v2.0.64/vokt-darwin-arm64"
-      sha256 "367cee98d167cfb60674e1dc0e7c1f3a43c662714d1d89d0999743f7458540d5"
+      url "https://github.com/voktlabs/homebrew-vokt/releases/download/v2.0.65/vokt-darwin-arm64"
+      sha256 "363b71662d807397066bc87aee04f65fef67c06c9d72c93383b01b2655c4f739"
     else
-      url "https://github.com/voktlabs/homebrew-vokt/releases/download/v2.0.64/vokt-darwin-amd64"
-      sha256 "6ad118224a7e10e794c60d8a2e1a16fae9554aab93a045bea3c882ed2c7e94ff"
+      url "https://github.com/voktlabs/homebrew-vokt/releases/download/v2.0.65/vokt-darwin-amd64"
+      sha256 "79b4f996c8326b0eb932d012c5e71dd9a5747676ef24ff655dbf060e227c3c8c"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/voktlabs/homebrew-vokt/releases/download/v2.0.64/vokt-linux-arm64"
-      sha256 "99346f764e8162f5de545416d859af55f9ffa0205d7f17ff5dbe9292554742f9"
+      url "https://github.com/voktlabs/homebrew-vokt/releases/download/v2.0.65/vokt-linux-arm64"
+      sha256 "1e2c2c8de4cc02f48bd695749f083a9864b9b5d6bdb10cc23ff2afcebc930510"
     else
-      url "https://github.com/voktlabs/homebrew-vokt/releases/download/v2.0.64/vokt-linux-amd64"
-      sha256 "c76dc90f1cf6fe286d5b2ceffdff7e94cf184798aa56677162dd5a5b2158a46a"
+      url "https://github.com/voktlabs/homebrew-vokt/releases/download/v2.0.65/vokt-linux-amd64"
+      sha256 "06270e460aee0b2ec0a7498665fe661f7ab5151feab716df12d1cdfbf85228b9"
     end
   end
 
